@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+UPDATE wp_posts SET guid = replace(guid, '${1:http://www.old-domain.com}','${5:http://www.new-domain.com}');
+UPDATE wp_posts SET post_content = replace(post_content, '${2:http://www.old-domain.com}', '${6:http://www.new-domain.com}');
+UPDATE wp_postmeta SET meta_value = replace(meta_value, '${3:http://www.old-domain.com}', '${7:http://www.new-domain.com}');
+UPDATE wp_options SET option_value = replace(option_value, '${4:http://www.old-domain.com}', '${8:http://www.new-domain.com}') WHERE option_name = 'home' OR option_name = 'siteurl';
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>wpdb</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>
